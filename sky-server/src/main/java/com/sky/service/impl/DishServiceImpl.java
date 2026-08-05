@@ -106,6 +106,7 @@ public class DishServiceImpl implements DishService {
     }
 
     //修改菜品及口味数据
+    @Transactional
     public void updateWithFlavor(DishDTO dishDTO) {
          //修改菜品基本信息
         Dish dish = new Dish();
