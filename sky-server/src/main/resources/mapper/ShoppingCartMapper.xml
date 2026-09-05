@@ -2,6 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.sky.mapper.ShoppingCartMapper">
+    <!-- 批量插入购物车数据 -->
+    <insert id="insertBatch">
+        insert into shopping_cart (user_id, dish_id, setmeal_id, name, dish_flavor, image, amount, number, create_time)
+        values
+        <foreach collection="shoppingCartList" item="item" separator=",">
+            (#{item.userId}, #{item.dishId}, #{item.setmealId}, #{item.name}, #{item.dishFlavor}, #{item.image}, #{item.amount}, #{item.number}, #{item.createTime})
+        </foreach>
+    </insert>
 
     <select id="list" resultType="com.sky.entity.ShoppingCart">
         select * from shopping_cart
