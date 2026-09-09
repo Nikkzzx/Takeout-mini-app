@@ -18,3 +18,5 @@ sky:
   wechat:
     appid: wxee3344ad71a9f41a
     secret: 448265f84eafd8c76b5ee9e65e6d02ca
+  baidu:
+    ak: devYknTMqe8Lm6X304iaEwgyn1uCT9vg
